@@ -1,0 +1,9 @@
+{
+    "/assets/vendors/moment/moment.min.js": "/assets/vendors/moment/moment.min.js",
+    "/assets/vendors/moment/moment-with-locales.min.js": "/assets/vendors/moment/moment-with-locales.min.js",
+    "/assets/vendors/moment/locales.min.js": "/assets/vendors/moment/locales.min.js",
+    "/assets/vendors/lightpick/js/lightpick.js": "/assets/vendors/lightpick/js/lightpick.js",
+    "/assets/vendors/lightpick/css/lightpick.css": "/assets/vendors/lightpick/css/lightpick.css",
+    "/assets/vendors/bootstrap-colorpicker/bootstrap-colorpicker.min.js": "/assets/vendors/bootstrap-colorpicker/bootstrap-colorpicker.min.js",
+    "/assets/vendors/bootstrap-colorpicker/bootstrap-colorpicker.min.css": "/assets/vendors/bootstrap-colorpicker/bootstrap-colorpicker.min.css"
+}

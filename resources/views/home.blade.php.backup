@@ -1,0 +1,135 @@
+@extends('layouts.default')
+
+@section('content')
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-8">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a href="#" class="btn btn-sm btn-primary"><span class="fal fa-home"></span> Home</a>
+                <a href="#" class="btn btn-sm btn-primary"><span class="fal fa-tasks"></span> Task</a>
+                <a href="#" class="btn btn-sm btn-primary"><span class="fal fa-user"></span> Profile</a>
+            </div>
+        </div>
+        <div class="col-md-4 text-right">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a href="{{ route('plan.create') }}" class="btn btn-sm btn-primary"><span class="fal fa-plus"></span> Add Plan</a>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <!-- <div class="row mb-2">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="input-group" >
+                                    <input type="text" class="form-control" id="datetime">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fal fa-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div id="timeline" class="calendar-container"></div> -->
+                    <table class="table">
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Due Date</th>
+                            <th class="text-center"><span class="fal fa-tasks"></span></th>
+                        <tr>
+                        @foreach($plans as $plan)
+                        <tr>
+                            <td>{{ $plan->title }}</td>
+                            <td>{{ $plan->description }}</td>
+                            <td>{{ $plan->start }} - {{ $plan->end }}</td>
+                            <td class="text-center">
+                                <a href="{{ route('plan.show', $plan->id) }}" class="btn btn-sm btn-primary"><span class="fal fa-tasks"></span></a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+@stop
+
+@section('style')
+    <link href="{{ asset('assets/vendors/fullcalendar/core/main.css') }}" rel='stylesheet' />
+    <link href="{{ asset('assets/vendors/fullcalendar/timeline/main.css') }}" rel='stylesheet' />
+    <link href="{{ asset('assets/vendors/fullcalendar/resource-timeline/main.css') }}" rel='stylesheet' />
+    <link href="{{ asset('assets/vendors/fullcalendar/timegrid/main.css') }}" rel='stylesheet' />
+@endsection
+
+@section('script')
+<script>
+    // $.extend(true, $.fn.datetimepicker.defaults, {
+    //     icons: {
+    //         time     : 'far fa-clock',
+    //         date     : 'far fa-calendar',
+    //         up       : 'fas fa-arrow-up',
+    //         down     : 'fas fa-arrow-down',
+    //         previous : 'fas fa-chevron-left',
+    //         next     : 'fas fa-chevron-right',
+    //         today    : 'fas fa-calendar-check',
+    //         clear    : 'far fa-trash-alt',
+    //         close    : 'far fa-times-circle'
+    //     }
+    // });
+    // $('#datetime').datetimepicker({
+    //     format: 'L'
+    // });
+
+    // $('document').ready(function(){
+
+    //     var calendarEl = document.getElementById('timeline');
+    //     var calendar = new FullCalendar.Calendar(calendarEl, {
+    //         plugins: ['resourceTimeline', 'resourceTimeGrid', 'interaction'],
+    //         defaultView: 'resourceTimelineDay',
+    //         header: {
+    //             left: 'today,prev,next',
+    //             center: 'title',
+    //             right: 'resourceTimelineDay,resourceTimelineWeek,resourceTimelineMonth'
+    //         },
+    //         calendarWeekends: true,
+    //         selectable: true,
+    //         editable: true,
+    //         calendarEvents: [ // initial event data
+    //             { title: 'Event Now', start: new Date() }
+    //         ],
+    //         resourceColumns: [
+    //             {
+    //                 labelText: 'Task Name',
+    //                 field: 'title'
+    //             },
+    //             // {
+    //             //     labelText: '#',
+    //             //     field: 'menu',
+    //             //     width: 70,
+    //             //     render: function(resource, el) {
+    //             //         var extendedProps = resource.extendedProps;
+    //             //         // console.log(el);
+    //             //         var menu = `
+    //             //             <div class="btn-group btn-group-sm" role="group">
+    //             //                 <button type="button" class="btn btn-danger"><span class="fa fa-trash"></span></button>
+    //             //                 <button type="button" class="btn btn-warning"><span class="fa fa-edit"></span></button>
+    //             //             </div>
+    //             //         `;
+    //             //         $(el).html(menu);
+    //             //     }
+    //             // },
+    //         ],
+    //         // resources: [],
+    //         // events: [],
+    //         resources: 'https://fullcalendar.io/demo-resources.json?with-nesting&with-colors',
+    //         events: 'https://fullcalendar.io/demo-events.json?single-day&for-resource-timeline',
+    //         height: 600
+    //     });
+    //     calendar.render();
+
+    // })
+</script>   
+@endsection
