@@ -163,7 +163,10 @@
                             "failurePolicy": "Retry",
                             "execNewPod": {
                                 "command": [
-                                    "./migrate.sh"
+                                    "php artisan reset",
+                                    "sudo yum install nodejs npm -y",
+                                    "npm install",
+                                    "npm run dev"
                                 ],
                                 "containerName": "laravel-mysql-persistent"
                             }
@@ -294,7 +297,7 @@
                                     },
                                     {
                                         "name": "MAIL_FROM_ADDRESS",
-                                        "value": "${MAILGUN_FROM_ADDRESS}"
+                                        "value": "${MAIL_FROM_ADDRESS}"
                                     },
                                     {
                                         "name": "MAIL_FROM_NAME",
