@@ -36,7 +36,7 @@
         "bootstrap-colorpicker": "^3.1.2",
         "bootstrap-vue": "^2.0.0-rc.19",
         "lightpick": "^1.3.4",
-        "luxon": "^1.13.0",
+        "luxon": "^1.28.1",
         "v-calendar": "^0.9.7",
         "vue-datetime": "^1.0.0-beta.10",
         "vue-router": "^3.0.6",
